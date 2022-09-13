@@ -1,10 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+ * Para customizar os breakpoints do bootstrap, devemos customizá-los antes do import do bootstrap
+*/
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 480px,
-  md: 768px,
-  lg: 1100px
-);
+:root {
+  --breakpoint-lg: 1100px;
+  
+  $grid-breakpoints: (
+    xs: 0,
+    sm: 480px,
+    md: 768px,
+    lg: var(--breakpoint-lg)
+  );
+}
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
